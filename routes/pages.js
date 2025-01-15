@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Rota para a página inicial
 router.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', { title: 'Zybaoutdoors - Birdwatching tours' });
 });
 
 // Rotas para as outras páginas

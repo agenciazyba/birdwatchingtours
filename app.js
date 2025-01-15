@@ -12,6 +12,7 @@ require('dotenv').config();
 const NOTION_API_KEY = process.env.NOTION_API_KEY;
 const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
 
+
 // Middleware para arquivos estáticos e JSON
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
