@@ -1,0 +1,52 @@
+<script>
+    // Função para buscar pássaros com base nas coordenadas
+    async function fetchBirds(lat, lng) {
+        if (!lat || !lng) {
+            console.error('Coordenadas inválidas:', lat, lng);
+            return;
+        }
+
+        try {
+            const response = await fetch(`/birds?lat=${lat}&lng=${lng}`);
+            const birds = await response.json();
+
+            const birdList = document.getElementById('birdList');
+            birdList.innerHTML = '';
+
+            if (birds.length > 0) {
+                // Ordenar os pássaros em ordem alfabética pelo nome comum
+                birds.sort((a, b) => a.comName.localeCompare(b.comName));
+
+                // Iterar sobre a lista ordenada e criar itens numerados
+                birds.forEach((bird, index) => {
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('list-group-item');
+                    listItem.innerHTML = `
+                        <span class="font-weight-bold">${index + 1}. ${bird.comName} - </span>
+                        <span class="bird-scientific">${bird.sciName}</span>
+                    `;
+                    birdList.appendChild(listItem);
+                });
+            } else {
+                // Mostrar mensagem com as coordenadas caso nenhum pássaro seja encontrado
+                birdList.innerHTML = `<li>Nenhum pássaro encontrado para a localização (${lat}, ${lng}).</li>`;
+            }
+        } catch (error) {
+            console.error('Erro ao buscar pássaros:', error);
+
+            // Mostrar mensagem de erro
+            const birdList = document.getElementById('birdList');
+            birdList.innerHTML = `<li>Erro ao buscar pássaros para a localização (${lat}, ${lng}).</li>`;
+        }
+    }
+
+    // Evento para capturar as coordenadas ao abrir o Offcanvas
+    document.querySelector('[data-bs-target="#offcanvasRight"]').addEventListener('click', (event) => {
+        const button = event.target; // O botão que foi clicado
+        const lat = button.getAttribute('data-lat'); // Captura o atributo data-lat
+        const lng = button.getAttribute('data-lng'); // Captura o atributo data-lng
+
+        // Chama a função fetchBirds com as coordenadas capturadas
+        fetchBirds(lat, lng);
+    });
+</script>

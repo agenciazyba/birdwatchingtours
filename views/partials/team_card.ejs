@@ -1,0 +1,42 @@
+<section id="dynamicSection" class="dynamic-section rounded" style="background-image: url('../../public/images/photo_rico.png');">
+    <div class="overlay rounded"></div>
+    <div class="content">
+        <h4 id="sectionTitle">Rico Magnusson</h4>
+        <h5 id="sectionDescription">This is the description for the first background.</h5>
+        <div class="buttons">
+            <button class="me-2 cardbutton" onclick="changeContent(1)">Rico</button>
+            <button class="me-2 cardbutton" onclick="changeContent(2)">Button 2</button>
+            <button class="cardbutton" onclick="changeContent(3)">Button 3</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    const backgrounds = [
+        {
+            image: '../../public/images/photo_rico.png',
+            title: 'Rico Magnusson',
+            description: 'Zyba founder'
+        },
+        {
+            image: '../../public/images/photo_allan.png',
+            title: 'Allan',
+            description: 'Bird guide'
+        },
+        {
+            image: 'image3.jpg',
+            title: 'Title 3',
+            description: 'This is the description for the third background.'
+        }
+    ];
+
+    function changeContent(index) {
+        const section = document.getElementById('dynamicSection');
+        const title = document.getElementById('sectionTitle');
+        const description = document.getElementById('sectionDescription');
+
+        section.style.backgroundImage = `url(${backgrounds[index - 1].image})`;
+        title.textContent = backgrounds[index - 1].title;
+        description.textContent = backgrounds[index - 1].description;
+    }
+</script>

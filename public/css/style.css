@@ -1,0 +1,616 @@
+/* Importando a fonte Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  gap:0;
+}
+
+p{
+  font-size: 13px;
+}
+
+.fit-content{
+ width: fit-content;
+}
+
+h1{
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+  line-height: 4.5rem;
+
+}
+
+h1, h2, h3, h4{
+  font-family: "Staatliches", sans-serif;
+
+}
+
+h6{
+  font-size:medium;
+  
+  }
+
+h5{
+font-size: small;
+
+}
+
+#hero h1{
+  margin-left:12%;
+}
+
+#hero h5{
+  margin-left:12%;
+}
+
+.txt_zyba_green{
+  color: #807E30;
+}
+
+.txt_green{
+  color: #fff;
+  font-family: Poppins;
+  font-size: 10px;
+  background-color: #639973;
+  padding: 3px 5px;
+  margin: 0 0 0 5px;
+}
+
+.txt_blue{
+  color: #fff;
+  font-family: Poppins;
+  font-size: 10px;
+  background-color: #637f99;
+  padding: 3px 5px;
+  margin: 0 0 0 5px;
+}
+
+.txt_yellow{
+  color: #fff;
+  font-family: Poppins;
+  font-size: 10px;
+  background-color: #959963;
+  padding: 3px 5px;
+  margin: 0 0 0 5px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #000;
+  align-items: center;
+  background: linear-gradient(to bottom, rgb(255, 255, 229), white) no-repeat;
+  height: 30vh; /* Define altura total da viewport */
+}
+
+.bg_aboutus{
+  background: url('../../public/images/bg_aboutus.jpg') no-repeat left bottom;
+  background-size: cover;
+  background-position: 50%;
+  min-height: 400px;
+  margin-bottom: 50px;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 0;
+  margin:0;
+  text-align: center;
+}
+
+#hero{
+  min-height: 650px;
+}
+
+.PhotoGalTour{
+  height: fit-content;
+
+}
+
+.navbar-nav .nav-item {
+  margin-right: 45px; /* Adiciona espaçamento entre os itens */
+  color: #000;
+  font-weight: 500;
+
+}
+
+.navbar-nav .nav-item a:hover {
+ text-decoration: underline;
+
+  
+}
+
+.navbar-nav .nav-item:last-child {
+  margin-right: 0; /* Remove o espaçamento do último item */
+}
+
+.navbar-trip .col {
+  flex: 1;
+}
+
+.navbar-trip .btn-primary {
+  padding: 0;
+  font-size: 1rem;
+}
+
+.scrollspy-section {
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+
+
+/* Estilos para o Offcanvas */
+.ofaoffcanvas-body{
+  background-color: #f8f9fa; /* Cor de fundo suave */
+  color: #2c3e50;
+}
+
+/* Estilos para a lista birdList dentro do Offcanvas */
+#birdList ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#birdList li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Estilo para o nome comum do pássaro */
+.bird-common {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-right: 8px;
+}
+
+/* Estilo para o nome científico do pássaro */
+.bird-scientific {
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+/* Remove a borda da última linha */
+#birdList li:last-child {
+  border-bottom: none;
+}
+
+/* Galeria */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 6 colunas */
+  grid-auto-rows: auto; /* Altura automática para as linhas */
+  gap: 10px; /* Espaço entre os itens */
+  padding: 20px;
+  background: #fff; /* Fundo branco */
+  border-radius: 8px; /* Cantos arredondados */
+}
+
+/* Itens da galeria */
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item img.loaded {
+  opacity: 1;
+}
+
+/*SECTIONS INDEX*/
+
+/* Seção de duas colunas */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas lado a lado */
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+
+  border-radius: 8px;
+  align-items: center; /* Alinha conteúdo verticalmente */
+}
+
+@media (max-width: 768px) {
+  .two-columns {
+    grid-template-columns: 1fr; /* Coloca as colunas em uma única coluna vertical */
+  }
+
+  .two-columns .image-content {
+    order: -1; /* Move a imagem antes do texto */
+  }
+
+  .image-content img {
+    width: 70%; /* Reduz o tamanho da imagem em 30% */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+  }
+
+  .text-content {
+    text-align: center; /* Centraliza o texto em telas menores */
+  }
+}
+
+/* Primeira coluna: texto */
+.text-content {
+  padding: 20px;
+}
+
+
+.text-content p {
+  margin: 0 0 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+.cta-button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+/* Segunda coluna: imagem */
+.image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+
+/*card*/
+.card{
+	width: 270px;
+	border: none;
+	border-radius: 12px;
+	position: relative;
+  border: 1px solid #ededed;
+}
+
+
+.ImgCard{
+  height:100%;
+  object-fit: fill;
+}
+
+p.CardCountry{
+	position: absolute;
+	top: 6%;
+	left: 10%;
+	right: 10%;
+	font-size:10px;
+  color: #fff;
+  background-color: #000;
+  padding: 5px;
+  width: fit-content;
+  border-radius: 3px;
+}
+
+p.CardTitle{
+	position: absolute;
+	top: 55%;
+	left: 10%; 
+	right: 10%;
+	font-size: 18px;
+	color: #ffffff !important;
+  font-family: "Staatliches", sans-serif;
+  background-color: #0000006a;
+  padding: 3px;
+  width: fit-content;
+}
+
+p.CardDescription {
+	position: absolute;
+	top: 68%;
+	left: 10%;
+	right: 10%;
+  font-size: 12px;
+	color: #ffffff !important;
+
+}
+
+.CardBgGradient{
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top:50%;
+  background: rgb(2,0,60);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0) 100%);
+  border-radius: 12px;
+}
+
+.CardButton{
+font-size: 14px;
+position: absolute;
+left: 10%;
+right: 10%;
+top:85%;
+background-color: #ffffff43 ;
+border: none;
+border-radius: 7px;
+color: #fff;
+width: fit-content;
+padding: 10px;
+}
+
+.CardButton:hover{
+  background-color: #fff ;
+  color: #000000
+  
+  }
+
+
+.btn-primary{
+	background: #616BCC;
+	border: none;
+	border-radius: 7px;
+	padding: 15px;
+}
+.btn-primary:hover{
+	background: #616BCC;
+}
+.btn-primary:focus{
+	box-shadow: none;
+}
+
+
+.newsletter-section {
+  background: url('../../public/images/bg_newsletter.jpg') no-repeat center bottom;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  margin: 0;
+}
+.newsletter-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.newsletter-content {
+  position: relative;
+  z-index: 2;
+}
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.newsletter-form input[type="text"] {
+  flex: 1;
+}
+
+
+.dynamic-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content:end;
+  color: white;
+  text-align: left;
+  padding: 20px;
+  min-width: 550px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.cardbutton{
+background-color: #ffffff50;
+border: 0px solid #ffffff50;
+border-radius: 10px;
+font-size: 10px;
+color: #ffffff;
+padding: 5px 10px;
+
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.content {
+  position: relative;
+  z-index: 2;
+}
+.buttons {
+  margin-top: 20px;
+}
+
+
+.container_height{
+  min-height: 600px;
+}
+
+ input[type=text], [type=email], textarea.form-control , select.form-control {
+  width: 75%;
+  padding: 5px 10px;
+  margin: 0px 0;
+  border: 1px solid #1d512d;
+  resize: none;
+}
+
+/* TAB  TRIP DETAILS*/
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: none;
+  background-color:none;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  float: left;
+  margin:0 10px 10px 0;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 10px;
+  transition: 0.1s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #b3e1ba;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #e0e0e0;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  width: fill;
+  padding: 6px 12px;
+  border: none;
+  border-top: none;
+  text-align: justify;
+}
+
+
+
+/* Gallery Grid */
+.gallery-container {
+  padding: 10px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+
+}
+
+
+.thumb {
+  width: 100%;  
+  height: 200px;
+  object-fit: cover; /* Garante que a imagem se ajusta sem distorção */
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+
+.thumb:hover {
+  transform: scale(1.03);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+  text-align: center;
+}
+
+.lightbox-image {
+  display: none;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.lightbox-image.active {
+  display: block;
+}
+
+.lightbox-thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.lightbox-thumbs img {
+  width: 50px;
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .gallery-grid {
+      display: flex;
+      overflow-x: scroll;
+  }
+
+  .gallery-grid img {
+      flex-shrink: 0;
+      width: 100px;
+      margin-right: 10px;
+  }
+
+  .lightbox {
+      display: none;
+  }
+}

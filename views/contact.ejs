@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site com Node e Express</title>
+
+    <!-- Bootstrap CSS (versão 5) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <!-- CSS de estilo local -->
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+    <!-- Inclui o header como template parcial -->
+    <%- include('partials/header') %>
+
+    <main>
+      
+
+        <section class="two-columns container">
+            
+            <div class="column text-content">
+                <section class="container py-4 m-0 p-0">
+                    <div class="text-left">
+                        <h3>Follow Us</h3>
+                        <div class="d-flex justify-content-left gap-4 mt-1">
+                            <a href="#" class="text-dark" target="_blank">
+                                <i class="bi bi-instagram" style="font-size: 1.3rem;"></i>
+                            </a>
+                            <a href="#" class="text-dark" target="_blank">
+                                <i class="bi bi-youtube" style="font-size: 1.3rem;"></i>
+                            </a>
+                            <a href="#" class="text-dark" target="_blank">
+                                <i class="bi bi-whatsapp" style="font-size: 1.3rem;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <div> 
+            
+                    <p class="m-0 p-0"> sales@zybaoutdoors.com</p>
+                    <p class="m-0 p-0"> + 1 (808) 494-4907</p>
+                  </div>
+
+                  
+            </div>
+
+            <div class="column text-content">
+            <h5>About Zyba Outdoors</h5>
+            <h2>Let's Talk</h2>
+              <form>
+                <div class="mb-3 mt-5">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+            
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="4"></textarea>
+                </div>
+                <div class="text-left">
+                    <button type="submit" class="btn btn-success">Send Message</button>
+                </div>
+            </form>
+            </div>
+        </div>
+            
+          </section>
+
+
+          
+
+          <section class="newsletter-section mt-5 p-0">
+            <div class="newsletter-overlay"></div>
+            <div class="newsletter-content">
+                <h2 class="text-black">Newsletter</h2>
+                <p class="text-black">Subscribe to our newsletter</p>
+                <form class="newsletter-form">
+                    <input type="text" class="form-control">
+                    <button type="submit" class="btn btn-success">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        
+       
+    </main>
+
+    <!-- Inclui o footer como template parcial -->
+    <%- include('partials/footer') %>
+
+    <!-- Bootstrap JS (Popper incluído) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

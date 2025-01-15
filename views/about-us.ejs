@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site com Node e Express</title>
+
+    <!-- Bootstrap CSS (versão 5) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS de estilo local -->
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+    <!-- Inclui o header como template parcial -->
+    <%- include('partials/header') %>
+
+    <main>
+        <section class="two-columns container mt-0 container_height">
+            
+            <div class="column text-content">
+              <h5>About Zyba Outdoors</h5>
+              <h2>We want to guide you to unforgettable moments</h2>
+              <p>
+                Discover the most remote destinations in South America with personalized itineraries. Experience the beauty of nature with expert guides, rare species, and unique ecosystems.
+              </p>
+            </div>
+            <div class="column image-content">
+                      <!-- Inclui o header como template parcial -->
+                    <%- include('partials/team_card') %>
+              </div>
+          </section>
+          
+
+          <section class="two-columns container mt-0 bg_aboutus">
+            <div class="column image-content">
+           
+
+                             </div>
+            <div class="column text-content p-5 text-white">
+              <h5>About Zyba Outdoors</h5>
+              <h2 class="text-white">We want to guide you to unforgettable moments</h2>
+             
+<button class="btn btn-outline-light">check our trips</button> 
+            </div>
+            
+          </section>
+    </main>
+
+    <!-- Inclui o footer como template parcial -->
+    <%- include('partials/footer') %>
+
+    <!-- Bootstrap JS (Popper incluído) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+

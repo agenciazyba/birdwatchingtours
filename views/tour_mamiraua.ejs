@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Viagem - Trip Details</title>
+
+    <!-- Bootstrap CSS -->
+     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../public/css/style.css">
+
+      <!-- Importa a fonte Poppins do Google Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+     
+</head>
+
+
+<!-- Inclui o PlanYourTrip Form -->
+<%- include('partials/planyourtrip') %>
+
+    <!-- Inclui o header como template parcial -->
+    <%- include('partials/header') %>
+
+    <main class="container-fluid p-0">
+        <!-- Seção HERO -->
+        <section id="hero" class="d-flex align-items-center" style="background-image: url('../public/images/heros/tripdetails/mamiraua.jpg'); height: 500px; background-size: cover; background-position: right;">
+          <div class="row w-50 m-5 text-white text-left">
+            <h5 class="bg-black fit-content p-1 mx-3 rounded">Brazilian Amazon Tour</h5>
+            <h1>Mamirauá Immersion</h1>
+          </div>
+        </section>
+
+        <!-- Seção NAVBAR-TRIP -->
+        <section class="bg-light p-0 pt-5 w-100">
+            <div class="container container-fluid justify-content-center align-items-center">
+                <!-- Coluna 1 -->
+                 
+                <div class="row row-cols-5 row-cols-sm-5 row-cols-md-5">
+                    <div class="col text-center border-end">
+                    <h4>Location</h4>
+                    <p class="text-muted">Amazon, Brazil</p>
+                </div>
+              
+                <div class="col text-center border-end">
+                    <h4 class="fw-bold">Duration</h4>
+                    <p class="text-muted">10 Days</p>
+                </div>
+
+                <div class="col text-center border-end">
+                  <h4 class="fw-bold">Group Size</h4>
+                  <p class="text-muted">8</p>
+              </div>
+
+              <div class="col text-center border-end">
+                <h4 class="fw-bold">Endemism areas</h4>
+                <p class="text-muted">Guiana</p>
+            </div>
+                <!-- Coluna 3 -->
+                <div class="col text-center">
+                
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-success p-7" data-bs-toggle="modal" data-bs-target="#exampleModal" data-tour="TOUR123">
+   BOOK NOW
+  </button>
+
+  
+    <!-- Inclui o header como template parcial -->
+    <%- include('partials/tourjoinmodal') %>
+
+
+                </div>
+            </div>
+          </div>
+        </section>
+        <section class="container my-4">
+           
+<div class="container py-5">
+    
+    <div class="row">
+        <!-- Primeira Coluna: Carrossel de Imagens -->
+        <div class="col-md-6">
+            <!-- Carousel -->
+            <div id="photoCarousel" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner rounded">
+                    <!-- Item 1 -->
+                    <div class="carousel-item active">
+                        <img src="../public/images/tours/MamirauaImmersion/thumb01.jpg" class="d-block w-100" alt="Photo 1">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="carousel-item">
+                        <img src="../public/images/tours/MamirauaImmersion/thumb02.jpg" class="d-block w-100" alt="Photo 2">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="carousel-item">
+                        <img src="../public/images/tours/MamirauaImmersion/thumb02.jpg" class="d-block w-100 " alt="Photo 3">
+                    </div>
+                </div>
+                <!-- Botão Anterior -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <!-- Botão Próximo -->
+                <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </div>
+        
+
+        <!-- Segunda Coluna: Bloco de Texto -->
+        <div class="col-md-6 d-flex align-items-justify">
+          
+    
+            <div>
+              <h2 class="fw-bold">What to Expect</h2>
+              
+                <!-- Tab links -->
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Experience')">Experience</button>
+    <button class="tablinks" onclick="openCity(event, 'Guide')">Your Guide</button>
+    <button class="tablinks" onclick="openCity(event, 'Food')">Food</button>
+    <button class="tablinks" onclick="openCity(event, 'Accommoddation')">Accommoddation</button>
+  </div>
+ 
+  <!-- Tab content -->
+  <div id="Experience" class="tabcontent">
+    <p>
+The Mamirauá Sustainable Development Reserve is a birdwatcher’s paradise and a treasure trove of biodiversity. Nestled within the Jaú Endemism Center, this remarkable reserve offers an unforgettable experience in one of the Amazon's most pristine and dynamic ecosystems. The flooded forests, known as várzea, create a breathtaking landscape that supports an astonishing variety of bird species, many of which are found nowhere else in the world.
+Iconic species such as the prehistoric-looking Hoatzin, the colorful Bonaparte Parakeet, and the graceful Osprey are just a few of the highlights. 
+<p>
+The reserve is also home to rare gems like the elusive Collared Trogon and the melodious Ferruginous Uirapuru. Whether you’re gliding through serene waterways or exploring lush forest trails, the vibrant calls and dazzling plumage of these birds create a sensory experience like no other.
+The Jaú Endemism Center showcases the Amazon’s extraordinary ecological diversity, where rivers, wetlands, and forests converge to foster unique evolutionary adaptations. This isolation has led to an exceptional level of endemism, making every sighting a rare and thrilling encounter.</p>
+</p>
+<p>
+A visit to Mamirauá isn’t just about birdwatching; it’s a profound journey into the heart of one of the planet’s most extraordinary ecosystems. From spotting a camouflaged Potoo at dusk to marveling at an Anhinga basking in the sun, every moment here is a celebration of the Amazon’s unmatched beauty and biodiversity.
+</p>
+
+</div>
+
+  <div id="Guide" class="tabcontent">
+    <p>
+        Our team of bilingual ornithologist guides is highly trained and certified, with extensive knowledge of the region's birdlife. They will be responsible for guiding you through this incredible adventure during your stay in Brazil.
+    </p><p>
+The languages spoken during the tours will be English and Brazilian Portuguese. For other languages, translation apps can be used, or a local translator may be arranged upon prior request.    
+    </p>
+  </div>
+
+  <div id="Food" class="tabcontent">
+    <p>The meals during your trip will be of high quality. While in the city, you will enjoy dining at excellent restaurants. At the lodges, you will savor fresh food prepared with traditional regional recipes, featuring a wide variety of local fish.
+        
+        During birdwatching days, we will provide fruits, beverages such as water, regional fruit juices, and isotonic drinks to ensure you stay hydrated.
+    </p> <p>
+        Additionally, coolers and thermal bags will be available so that each traveler can bring extra snacks of their choice for added comfort.
+        </p><p>
+        It is important to inform us of any food intolerances or dietary restrictions prior to the tour.
+    </p>
+  </div>
+
+  <div id="Accommoddation" class="tabcontent">
+    <p>
+        We understand the importance of being well-rested and ready for the next day. Therefore, the accommodations during your tour will be of excellent quality. Hotels in the city will be at least 4-star standard, ensuring comfort and convenience.
+    </p>
+    <p>
+In jungle lodges, while some may offer simpler structures, we guarantee that all will meet a minimum standard of quality and service, ensuring your experience is always pleasant and aligned with expectations.
+    </p>
+  </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+        </section>
+        <section class="container">
+            <h2 class="fw-bold ms-2">Itinerary</h2>
+      
+            <%- include('../public/Itinerary_Mamiraua.html') %>
+        </section>
+        <section style="background-color: rgb(42, 50, 48); color: white; padding: 40px 20px;">
+            <div class="container">
+                <div class="row">
+                    <!-- Primeira Coluna -->
+                    <div class="col-12 col-md-6 mb-4">
+                        <h3 class="text-left">Inluded</h3>
+                        <ul class="list-unstyled">
+                            <li>- Ground transportation (car with driver)</li>
+                            <li>- Boat transfer</li>
+                            <li>- Expert guide and local guide</li>
+                            <li>- Food and drinks in the lodges</li>
+                            <li>- Water and fruits during the days</li>
+                            <li>- All Accommodation</li>
+                        </ul>
+                    </div>
+                    <!-- Segunda Coluna -->
+                    <div class="col-12 col-md-6 mb-4">
+                        <h3 class="text-left">Not included</h3>
+                        <ul class="list-unstyled">
+                            <li>- Laundry service</li>
+                            <li>- Extra expenses during the tour</li>
+                            <li>- Alcoholic drinks</li>
+                            <li>- Extra nights in Manaus if necessary</li>
+                            <li>- Photographic and observation equipment</li>
+                            <li>- Tips</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <div class="gallery-container bg-black">
+        <!-- Thumbnails -->
+        <div class="gallery-grid p-5">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb01.jpg" alt="Imagem 1" class="thumb" onclick="openLightbox(0)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb02.jpg" alt="Imagem 2" class="thumb" onclick="openLightbox(1)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb03.jpg" alt="Imagem 3" class="thumb" onclick="openLightbox(2)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb04.jpg" alt="Imagem 4" class="thumb" onclick="openLightbox(3)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb05.jpg" alt="Imagem 5" class="thumb" onclick="openLightbox(4)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb06.jpg" alt="Imagem 6" class="thumb" onclick="openLightbox(5)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb07.jpg" alt="Imagem 1" class="thumb" onclick="openLightbox(6)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb08.jpg" alt="Imagem 2" class="thumb" onclick="openLightbox(7)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb09.jpg" alt="Imagem 3" class="thumb" onclick="openLightbox(8)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb10.jpg" alt="Imagem 4" class="thumb" onclick="openLightbox(9)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb11.jpg" alt="Imagem 5" class="thumb" onclick="openLightbox(10)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb12.jpg" alt="Imagem 6" class="thumb" onclick="openLightbox(11)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb13.jpg" alt="Imagem 1" class="thumb" onclick="openLightbox(12)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb14.jpg" alt="Imagem 2" class="thumb" onclick="openLightbox(13)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb15.jpg" alt="Imagem 3" class="thumb" onclick="openLightbox(14)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb16.jpg" alt="Imagem 4" class="thumb" onclick="openLightbox(15)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb17.jpg" alt="Imagem 5" class="thumb" onclick="openLightbox(16)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb18.jpg" alt="Imagem 6" class="thumb" onclick="openLightbox(17)">
+       
+       
+       
+        </div>
+       
+
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb01.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb02.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb03.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb04.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb05.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb06.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb07.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb08.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb09.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb10.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb11.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb12.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb13.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb14.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb15.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb16.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb17.jpg" class="lightbox-image">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb18.jpg" class="lightbox-image">
+        </div>
+        <div class="lightbox-thumbs">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb01.jpg" onclick="changeImage(0)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb02.jpg" onclick="changeImage(1)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb03.jpg" onclick="changeImage(2)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb04.jpg" onclick="changeImage(3)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb05.jpg" onclick="changeImage(4)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb06.jpg" onclick="changeImage(5)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb07.jpg" onclick="changeImage(6)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb08.jpg" onclick="changeImage(7)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb09.jpg" onclick="changeImage(8)">
+            <img src="../public/images/tours/MamirauaImmersion/Thumb10.jpg" onclick="changeImage(9)">
+        </div>
+    </div>
+
+  <!---- script -->
+    <script src="../public/script/scripts.js"></script>
+    <script src="../public/script/modaljoin.js"></script>
+
+    <!-- Inclui o footer como template parcial -->
+    <%- include('partials/footer') %>
+
+
+    <!-- Bootstrap JS e Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
