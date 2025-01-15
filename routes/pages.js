@@ -18,4 +18,5 @@ router.get('/tour_endemismhaven', (req, res) => res.render('tour_endemismhaven')
 router.get('/tour_endemismnorth', (req, res) => res.render('tour_endemismnorth'));
 router.get('/tour_roosevelt', (req, res) => res.render('tour_roosevelt'));
 router.get('/tour_xingu', (req, res) => res.render('tour_xingu'));
+
 module.exports = router;
