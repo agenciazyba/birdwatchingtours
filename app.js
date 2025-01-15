@@ -18,7 +18,7 @@ app.use('/public', express.static('public'));
 
 // Configura EJS como motor de visualização e define pasta de views
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
+app.set('views', path.join(__dirname, 'views'));
 
 // Configura pasta pública para arquivos estáticos (CSS, imagens)
 app.use(express.static(__dirname + '/public'));
@@ -27,27 +27,6 @@ app.use(express.static(__dirname + '/public'));
 const pageRoutes = require('./routes/pages');
 app.use('/', pageRoutes);
 
-// Rota para buscar pássaros pela localização
-app.get('/birds', async (req, res) => {
-  const { lat, lng } = req.query;
-  
-  if (!lat || !lng) {
-      return res.status(400).json({ error: 'Parâmetros de latitude e longitude são necessários.' });
-  }
-  
-  try {
-      const response = await axios.get(`https://api.ebird.org/v2/data/obs/geo/recent`, {
-          params: { lat, lng },
-          headers: {
-              'X-eBirdApiToken': EBIRD_API_KEY
-          }
-      });
-      
-      res.json(response.data);
-  } catch (error) {
-      res.status(500).json({ error: 'Erro ao conectar com a API do eBird.' });
-  }
-});
 
 
 /* ROTA INCLUIR EMAIL NO NOTION */
