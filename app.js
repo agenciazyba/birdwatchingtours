@@ -1,49 +1,48 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const { Client } = require('@notionhq/client');
 const cors = require('cors');
-
-require('dotenv').config();
 const axios = require('axios');
-const path = require('path'); 
+const path = require('path');
+require('dotenv').config();
 
-const EBIRD_API_KEY = process.env.EBIRD_API_KEY;
+// Chaves da API
+const NOTION_API_KEY = process.env.NOTION_API_KEY;
+const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
+
+// Middleware para arquivos estáticos e JSON
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
+app.use(cors()); // Habilita CORS caso precise consumir APIs externamente
 
-app.use('/public', express.static('public'));
-
-
-// Configura EJS como motor de visualização e define pasta de views
+// Configura EJS como motor de visualização
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Configura pasta pública para arquivos estáticos (CSS, imagens)
-app.use(express.static(__dirname + '/public'));
-
-// Importa as rotas das páginas
+// Importa e usa as rotas das páginas
 const pageRoutes = require('./routes/pages');
 app.use('/', pageRoutes);
 
+// Instância do cliente Notion
+const notion = new Client({ auth: NOTION_API_KEY });
 
-
-/* ROTA INCLUIR EMAIL NO NOTION */
-
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
-const databaseId = process.env.NOTION_DATABASE_ID;
-
+/**
+ * Rota para enviar dados para o Notion
+ */
 app.post('/api/submit-form', async (req, res) => {
     const { name, phone, email, country, tour } = req.body;
 
+    // Validação dos campos obrigatórios
     if (!name || !phone || !email || !country || !tour) {
-        return res.status(400).send('Todos os campos são obrigatórios.');
+        return res.status(400).json({ error: 'Todos os campos são obrigatórios.' });
     }
 
     try {
+        // Cria uma nova página no Notion com os dados enviados
         await notion.pages.create({
-            parent: { database_id: databaseId },
+            parent: { database_id: NOTION_DATABASE_ID },
             properties: {
                 Name: { title: [{ text: { content: name } }] },
                 Phone: { phone_number: phone },
@@ -53,16 +52,14 @@ app.post('/api/submit-form', async (req, res) => {
             },
         });
 
-        res.status(200).send('Dados enviados para o Notion com sucesso!');
+        res.status(200).json({ message: 'Dados enviados para o Notion com sucesso!' });
     } catch (error) {
-        console.error(error);
-        res.status(500).send('Erro ao salvar os dados no Notion.');
+        console.error('Erro ao salvar dados no Notion:', error.message);
+        res.status(500).json({ error: 'Erro ao salvar os dados no Notion.' });
     }
 });
 
-
+// Inicia o servidor
 app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
-
-
