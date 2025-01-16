@@ -16,6 +16,7 @@ router.get('/tour_amazonfeathers', (req, res) => res.render('tour_amazonfeathers
 router.get('/tour_mamiraua', (req, res) => res.render('tour_mamiraua'));
 router.get('/tour_endemismhaven', (req, res) => res.render('tour_endemismhaven'));
 router.get('/tour_endemismnorth', (req, res) => res.render('tour_endemismnorth'));
+router.get('/tour_endemismsouth', (req, res) => res.render('tour_endemismsouth'));
 router.get('/tour_roosevelt', (req, res) => res.render('tour_roosevelt'));
 router.get('/tour_xingu', (req, res) => res.render('tour_xingu'));
 
