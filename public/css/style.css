@@ -384,7 +384,7 @@ padding: 10px;
 
 
 .newsletter-section {
-  background: url('/images/bg_newsletter.jpg') no-repeat center bottom;
+  background: url('../images/bg_newsletter.jpg') no-repeat center bottom;
   min-height: 200px;
   display: flex;
   align-items: center;
