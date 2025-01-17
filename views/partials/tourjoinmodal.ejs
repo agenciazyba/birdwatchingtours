@@ -3,18 +3,18 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLabel">Book your trip with us</h4>
+                <h4 class="modal-title text-center" id="exampleModalLabel">Book your trip with us</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form id="tourForm">
                     <div class="mb-3">
-                        <label for="name" class="">Name</label>
+                        <label for="name" class="form-label">Name</label>
                         <input type="text" class="" id="name" name="name" required>
                     </div>
                     <div class="mb-3">
                         <label for="phone" class="form-label">Phone</label>
-                        <input type="tel" class="" id="phone" name="phone" required>
+                        <input type="tel" class="" id="phone" name="phone">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
@@ -238,15 +238,15 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <div id="responseMessage" class="w-100 text-center"></div>
-                <button type="button" class="btnsecondary" data-bs-dismiss="modal">Fechar</button>
-                <button type="button" class="btn" id="submitBtn">Enviar</button>
-            </div>
+            <div class="modal-footer d-flex justify-content-center">
+    <div id="responseMessage" class="w-100 text-center"></div>
+    <button type="button" class="btnsecondary me-2" data-bs-dismiss="modal">Fechar</button>
+    <button type="button" class="btn" id="submitBtn">Enviar</button>
+</div>
         </div>
     </div>
 </div>
 
 
   </div>
-  <script src="/script/scripts.js"></script>
+  <script src="../../scripts.js"></script>

@@ -48,6 +48,30 @@ font-size: small;
   margin-left:12%;
 }
 
+
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  #hero h1 {
+    margin-left: 15% !important;
+    font-size: 4rem;
+  }
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  #hero h5 {
+    margin-left: 15% !important;
+  }
+}
+
+/* Ajuste para reduzir <h4> para <h5> em dispositivos menores */
+@media (max-width: 576px) {
+  h4 {
+      font-size: 1.25rem; /* Tamanho equivalente ao <h5> */
+  }
+}
+
 .txt_zyba_green{
   color: #807E30;
 }
@@ -541,13 +565,6 @@ padding: 5px 10px;
   min-height: 600px;
 }
 
- input[type=text], [type=email], textarea.form-control , select.form-control {
-  width: 75%;
-  padding: 5px 10px;
-  margin: 0px 0;
-  border: 1px solid #1d512d;
-  resize: none;
-}
 
 /* TAB  TRIP DETAILS*/
 
@@ -556,11 +573,14 @@ padding: 5px 10px;
   overflow: hidden;
   border: none;
   background-color:none;
+  margin: 5px 0;
+  padding-left: 10px;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
   float: left;
+  font-size: 1rem;
   margin:0 10px 10px 0;
   border: none;
   border-radius: 6px;
@@ -568,6 +588,13 @@ padding: 5px 10px;
   cursor: pointer;
   padding: 8px 10px;
   transition: 0.1s;
+}
+
+/* Ajuste para reduzir <h4> para <h5> em dispositivos menores */
+@media (max-width: 576px) {
+  .tab button {
+      padding: 4px 5px; /* Tamanho equivalente ao <h5> */
+  }
 }
 
 /* Change background color of buttons on hover */
@@ -639,13 +666,13 @@ padding: 5px 10px;
 
 .lightbox-content {
   max-width: 90%;
-  max-height: 80%;
+  max-height: 90%;
   text-align: center;
 }
 
 .lightbox-image {
   display: none;
-  max-width: 100%;
+  width: 100%;
   max-height: 100%;
 }
 
@@ -689,4 +716,75 @@ padding: 5px 10px;
   .lightbox {
       display: none;
   }
+}
+
+.accordion-body p{
+  text-align: justify;
+}
+
+#accordionFlushExample{
+  margin-bottom: 20px;
+}
+
+
+
+@media (max-width: 768px) {
+  .slide{
+    margin-bottom: 35px;
+    margin-top: 0;
+  }
+}
+
+form {
+  width: 100%; /* Limita a largura do formulário a 75% da tela */
+  margin: 0 auto; /* Centraliza o formulário horizontalmente */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* Estilo para os labels */
+form label {
+  text-align: left;
+  display: block; /* Garante que os labels fiquem acima dos campos */
+  margin-bottom: 0.5rem; /* Espaçamento entre o label e o campo */
+  color: #333; /* Cor do texto */
+}
+
+/* Estilo para os campos de entrada (input, select) */
+form input,
+form select {
+  text-align: left;
+  width: 90%; /* O campo ocupa toda a largura disponível */
+  background-color: #f8f9fa; /* Fundo cinza claro */
+  border: none; /* Remove bordas padrão */
+  border-bottom: 3px solid #000; /* Borda inferior preta com 3px */
+  padding: 0.5rem; /* Espaçamento interno */
+  border-radius: 0; /* Remove bordas arredondadas */
+  outline: none; /* Remove o contorno padrão ao focar */
+  font-size: 1rem; /* Ajusta o tamanho da fonte */
+  color: #333; /* Cor do texto */
+  margin-bottom: 10px;
+}
+
+/* Estilo para os campos de entrada ao focar */
+form input:focus,
+form select:focus {
+  background-color: #fff; /* Fundo branco ao focar */
+  border-bottom-color: #007bff; /* Muda a cor da borda inferior para azul */
+  outline: none; /* Remove o contorno padrão */
+}
+
+/* Botão de envio */
+form button#submitBtn {
+  background-color: #007bff; /* Fundo azul */
+  color: white; /* Texto branco */
+  border: none; /* Remove a borda */
+  padding: 0.5rem 1rem; /* Espaçamento interno */
+  font-size: 1rem; /* Tamanho da fonte */
+  border-radius: 0.25rem; /* Bordas arredondadas suaves */
+  cursor: pointer; /* Mostra o cursor de clique */
+}
+
+/* Botão de envio ao passar o mouse */
+form button#submitBtn:hover {
+  background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
