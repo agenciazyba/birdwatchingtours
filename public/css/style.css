@@ -1,6 +1,6 @@
 /* Importando a fonte Poppins do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
 
 * {
   margin: 0;
@@ -72,6 +72,10 @@ font-size: small;
   }
 }
 
+.itineraryBirdList{
+  font-size: 12px;
+}
+
 .txt_zyba_green{
   color: #807E30;
 }
@@ -132,8 +136,12 @@ body {
 }
 
 .PhotoGalTour{
-  height: fit-content;
+  max-height: 100px;
 
+}
+
+#photoCarousel img{
+  max-height: 400px;
 }
 
 .navbar-nav .nav-item {
