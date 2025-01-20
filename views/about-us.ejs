@@ -10,29 +10,38 @@
 
     <!-- CSS de estilo local -->
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+      
+      
 </head>
 <body>
     <!-- Inclui o header como template parcial -->
     <%- include('partials/header') %>
 
-    <main>
-        <section class="two-columns container mt-0 container_height">
-            
-            <div class="column text-content">
-              <h5>About Zyba Outdoors</h5>
-              <h2>We want to guide you to unforgettable moments</h2>
-              <p>
-                Discover the most remote destinations in South America with personalized itineraries. Experience the beauty of nature with expert guides, rare species, and unique ecosystems.
-              </p>
-            </div>
-            <div class="column image-content">
-                      <!-- Inclui o header como template parcial -->
-                    <%- include('partials/team_card') %>
-              </div>
-          </section>
+    <main class="p-3">
+      <section class="two-columns container-fluid py-4">
+        
+          <!-- Primeira coluna: Texto -->
+          <div class="col-12 col-lg-6 w-100 container">
+            <h5>About Zyba Outdoors</h5>
+            <h2>We want to guide you to unforgettable moments</h2>
+            <p>
+              Discover the most remote destinations in South America with personalized itineraries. Experience the beauty of nature with expert guides, rare species, and unique ecosystems.
+            </p>
+          </div>
+      
+          <!-- Segunda coluna: Conteúdo adicional -->
+          <div class="col-12 col-lg-6 w-100 container">
+            <!-- Inclui o header como template parcial -->
+            <%- include('partials/team_card') %>
+          </div>
+     
+      </section>
           
 
-          <section class="two-columns container mt-0 bg_aboutus">
+          <section class="two-columns container mt-0 bg_aboutus w-100">
             <div class="column image-content">
            
 

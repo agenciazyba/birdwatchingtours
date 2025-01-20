@@ -2,11 +2,11 @@
     <div class="overlay rounded"></div>
     <div class="content">
         <h4 id="sectionTitle">Rico Magnusson</h4>
-        <h5 id="sectionDescription">This is the description for the first background.</h5>
+        <p id="sectionDescription">Founder of ZybaOutdoors in Brazil, responsible for developing new projects and managing the logistical aspects of the tours.</p>
         <div class="buttons">
-            <button class="me-2 cardbutton" onclick="changeContent(1)">Rico</button>
-            <button class="me-2 cardbutton" onclick="changeContent(2)">Button 2</button>
-            <button class="cardbutton" onclick="changeContent(3)">Button 3</button>
+            <button class="cardbutton" onclick="changeContent(1)">Ricardo Magnusson</button>
+            <button class="me cardbutton" onclick="changeContent(2)">Allan Clé Porto</button>
+            <button class="me cardbutton" onclick="changeContent(3)">Mauricio Piza</button>
         </div>
     </div>
 </section>
@@ -15,20 +15,20 @@
     const backgrounds = [
         {
             image: '/images/photo_rico.png',
-            title: 'Rico Magnusson',
-            description: 'Zyba founder'
-        },
+            title: 'Ricardo Magnusson',
+            description: 'Founder of ZybaOutdoors in Brazil, responsible for developing new projects and managing the logistical aspects of the tours.' },
         {
             image: '/images/photo_allan.png',
-            title: 'Allan',
-            description: 'Bird guide'
+            title: 'Allan Clé',
+            description: 'Allan Clé Porto, Biologist/Ornithologist with a masters degree in seabird ecology from the Fisheries Institute of São Paulo State, conservationist, environmental consultant, and birdwatching guide across the entire Brazilian territory.'
         },
         {
-            image: 'image3.jpg',
-            title: 'Title 3',
-            description: 'This is the description for the third background.'
+            image: '/images/photo_Mauricio.png',
+            title: 'Mauricio Piza',
+            description: 'Biologist with extensive experience in several countries, partner at ZybaOutdoors, manager of birdwatching tours, and owner of the Patizal lodge in Brazil.'
         }
-    ];
+        ]
+        
 
     function changeContent(index) {
         const section = document.getElementById('dynamicSection');
