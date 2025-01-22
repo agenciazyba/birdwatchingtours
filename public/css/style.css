@@ -49,7 +49,9 @@ font-size: small;
   margin-left:12%;
 }
 
-
+.bg-yellow{
+  background-color: #FFBA08;
+}
 
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
