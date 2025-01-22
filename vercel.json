@@ -13,17 +13,3 @@
     }
   ]
 }
-
-{
-  "functions": {
-    "api/**/*.js": {
-      "maxDuration": 10
-    }
-  },
-  "ignore": [
-    "node_modules/",
-    ".git/",
-    "logs/",
-    "test/"
-  ]
-}
