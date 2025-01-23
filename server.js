@@ -1,3 +1,4 @@
+const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,6 +18,9 @@ const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(cors()); // Habilita CORS caso precise consumir APIs externamente
+
+// Middleware
+app.use(bodyParser.json());
 
 // Configura EJS como motor de visualização
 app.set('view engine', 'ejs');
@@ -62,6 +66,8 @@ app.post('/api/submit-form', async (req, res) => {
 
 // Exporta o app para uso no Vercel
 module.exports = app;
+
+
 
 // Inicia o servidor
 app.listen(PORT, () => {
