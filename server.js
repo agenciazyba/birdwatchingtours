@@ -1,4 +1,3 @@
-const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,8 +18,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(cors()); // Habilita CORS caso precise consumir APIs externamente
 
-// Middleware
-app.use(bodyParser.json());
 
 // Configura EJS como motor de visualização
 app.set('view engine', 'ejs');
@@ -36,7 +33,7 @@ const notion = new Client({ auth: NOTION_API_KEY });
 /**
  * Rota para enviar dados para o Notion
  */
-app.post('/api/submit-form', async (req, res) => {
+app.post('/public/api/submit-form', async (req, res) => {
     const { name, phone, email, country, tour } = req.body;
 
     // Validação dos campos obrigatórios
