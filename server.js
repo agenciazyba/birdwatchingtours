@@ -1,40 +1,36 @@
-const bodyParser = require('body-parser');
 const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3000;
-
 const { Client } = require('@notionhq/client');
 const cors = require('cors');
-const axios = require('axios');
 const path = require('path');
 require('dotenv').config();
 
-// Chaves da API
-const NOTION_API_KEY = process.env.NOTION_API_KEY;
-const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
+const app = express();
+const PORT = process.env.PORT || 3000;
 
+// Verificação de variáveis de ambiente
+if (!process.env.NOTION_API_KEY || !process.env.NOTION_DATABASE_ID) {
+    console.error("Erro: Variáveis de ambiente 'NOTION_API_KEY' e 'NOTION_DATABASE_ID' são obrigatórias.");
+    process.exit(1);
+}
 
-// Middleware para arquivos estáticos e JSON
+// Instância do cliente Notion
+const notion = new Client({ auth: process.env.NOTION_API_KEY });
+
+// Middleware para arquivos estáticos, JSON e CORS
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
-app.use(cors()); // Habilita CORS caso precise consumir APIs externamente
+app.use(cors());
 
-// Middleware
-app.use(bodyParser.json());
-
-// Configura EJS como motor de visualização
+// Configuração do EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Importa e usa as rotas das páginas
+// Rotas da aplicação
 const pageRoutes = require('./routes/pages');
 app.use('/', pageRoutes);
 
-// Instância do cliente Notion
-const notion = new Client({ auth: NOTION_API_KEY });
-
 /**
- * Rota para enviar dados para o Notion
+ * Rota para enviar dados ao Notion
  */
 app.post('/api/submit-form', async (req, res) => {
     const { name, phone, email, country, tour } = req.body;
@@ -45,9 +41,9 @@ app.post('/api/submit-form', async (req, res) => {
     }
 
     try {
-        // Cria uma nova página no Notion com os dados enviados
+        // Criação da página no Notion
         await notion.pages.create({
-            parent: { database_id: NOTION_DATABASE_ID },
+            parent: { database_id: process.env.NOTION_DATABASE_ID },
             properties: {
                 Name: { title: [{ text: { content: name } }] },
                 Phone: { phone_number: phone },
@@ -64,12 +60,12 @@ app.post('/api/submit-form', async (req, res) => {
     }
 });
 
+// Inicia o servidor localmente apenas se não estiver no Vercel
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Servidor rodando em http://localhost:${PORT}`);
+    });
+}
+
 // Exporta o app para uso no Vercel
 module.exports = app;
-
-
-
-// Inicia o servidor
-app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
