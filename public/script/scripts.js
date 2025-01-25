@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
           submitBtn.disabled = true; // Desativa o botão enquanto a requisição é processada
 
-          const response = await fetch("https://birdwatching.zybaoutdoors.com/api/submit-form", {
+          const response = await fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
