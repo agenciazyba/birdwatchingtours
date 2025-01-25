@@ -33,7 +33,7 @@ const notion = new Client({ auth: NOTION_API_KEY });
 /**
  * Rota para enviar dados para o Notion
  */
-app.post('/public/api/submit-form', async (req, res) => {
+app.post('/api/submit-form', async (req, res) => {
     const { name, phone, email, country, tour } = req.body;
 
     // Validação dos campos obrigatórios
