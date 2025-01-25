@@ -13,10 +13,10 @@ const NOTION_API_KEY = process.env.NOTION_API_KEY;
 const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
 
 
-// Middleware para arquivos estáticos e JSON
+// Middleware para arquivos estáticos e JSONnodemon server.js
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
-app.use(cors()); // Habilita CORS caso precise consumir APIs externamente
+app.use(cors({ origin: '*' })); // Habilita CORS para todas as origens
 
 
 // Configura EJS como motor de visualização
@@ -63,8 +63,6 @@ app.post('/api/submit-form', async (req, res) => {
 
 // Exporta o app para uso no Vercel
 module.exports = app;
-
-
 
 // Inicia o servidor
 app.listen(PORT, () => {
