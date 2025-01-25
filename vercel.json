@@ -8,7 +8,7 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "https://birdwatching.zybaoutdoors.com/api/(.*)",
       "dest": "server.js"
     },
     {
